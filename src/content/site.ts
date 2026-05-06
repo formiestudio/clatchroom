@@ -3,6 +3,7 @@ export const siteContent = {
     logo: "CLATCH",
     logoSub: "PODCAST STUDIO",
     links: ["CONCEPT", "SPACE", "PLAN", "EQUIPMENT", "ACCESS"],
+    historyLink: { label: "HISTORY", href: "/history" },
     ctaLabel: "CONTACT",
   },
 
@@ -133,8 +134,57 @@ export const siteContent = {
     ctaLabel: "CONTACT US",
   },
 
+  history: {
+    label: "HISTORY",
+    headline: "CLATCHが\n生まれるまでの物語。",
+    sub: "クリエイターのための空間をつくるまでの歩み",
+    milestones: [
+      {
+        year: "2019",
+        label: "着想",
+        title: "アイデアの誕生",
+        body: "渋谷でポッドキャストを制作していたファウンダーが、既存のスタジオに感じた違和感から構想がはじまる。「機能的でありながら、居心地のよい空間があれば」——そのシンプルな問いがCLATCHの出発点となった。",
+      },
+      {
+        year: "2021",
+        label: "設計",
+        title: "空間の設計とコンセプト確立",
+        body: "建築家・インテリアデザイナーとの協働がはじまる。フローリングとモルタルを組み合わせたデザイン言語、自然光を最大限に活かしたレイアウト、そしてプロ仕様の音響設計を統合したコンセプトが完成した。",
+      },
+      {
+        year: "2022",
+        label: "開業",
+        title: "CLATCH、渋谷にオープン",
+        body: "2022年春、渋谷神宮前にCLATCHがオープン。初月からポッドキャスター・YouTuber・企業のコンテンツ制作チームなど多様なクリエイターが集まり、瞬く間に予約が埋まるスタジオとなった。",
+      },
+      {
+        year: "2023",
+        label: "進化",
+        title: "プランと設備の拡充",
+        body: "利用者の声をもとに4プラン体制へ移行。プレミアムプランの追加と機材ラインナップの強化により、ポッドキャストから大規模な配信イベントまで対応できるスタジオへと進化した。",
+      },
+      {
+        year: "2024",
+        label: "コミュニティ",
+        title: "クリエイターコミュニティの形成",
+        body: "スタジオ利用者同士のコラボレーションが自然と生まれるようになり、CLATCHはただの撮影スペースを超えた創造のプラットフォームへ。定期的なイベントや交流会も開催されるようになった。",
+      },
+      {
+        year: "2025",
+        label: "現在",
+        title: "次のステージへ",
+        body: "開業から3年、CLATCHは渋谷を代表するクリエイティブスタジオとして成長を続けている。これからも「つくる人のための空間」というビジョンを大切に、クリエイターとともに進化し続ける。",
+      },
+    ],
+    philosophy: {
+      label: "OUR PHILOSOPHY",
+      headline: "空間が、クリエイティビティを解放する。",
+      body: "CLATCHが大切にしているのは、「場の力」です。インテリアの美しさ、音響の精度、光の質——これらすべてが揃った環境でこそ、クリエイターは最高のパフォーマンスを発揮できると信じています。私たちはスタジオを貸すだけでなく、あなたの表現をサポートする空間をつくり続けます。",
+    },
+  },
+
   footer: {
-    links: ["CONCEPT", "SPACE", "PLAN", "EQUIPMENT", "ACCESS", "FAQ", "CONTACT"],
+    links: ["CONCEPT", "SPACE", "PLAN", "EQUIPMENT", "ACCESS", "HISTORY", "FAQ", "CONTACT"],
     socialLinks: [
       { name: "Instagram", url: "#" },
       { name: "X", url: "#" },

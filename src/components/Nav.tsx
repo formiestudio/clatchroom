@@ -1,37 +1,48 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { siteContent } from "@/content/site";
 
 const { nav } = siteContent;
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const anchorBase = isHome ? "" : "/";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <div className="flex flex-col leading-none">
+        <Link href="/" className="flex flex-col leading-none">
           <span className="font-cormorant text-2xl font-light tracking-widest text-zinc-900">
             {nav.logo}
           </span>
           <span className="text-[9px] tracking-widest text-zinc-500 font-light mt-0.5">
             {nav.logoSub}
           </span>
-        </div>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {nav.links.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`${anchorBase}#${link.toLowerCase()}`}
               className="text-[11px] tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors font-light"
             >
               {link}
             </a>
           ))}
+          <Link
+            href={nav.historyLink.href}
+            className="text-[11px] tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors font-light"
+          >
+            {nav.historyLink.label}
+          </Link>
           <a
-            href="#contact"
+            href={`${anchorBase}#contact`}
             className="bg-zinc-900 text-white text-[11px] tracking-widest px-5 py-2.5 hover:bg-zinc-700 transition-colors flex items-center gap-2 font-light"
           >
             {nav.ctaLabel} <span>→</span>
@@ -62,15 +73,22 @@ export default function Nav() {
           {nav.links.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`${anchorBase}#${link.toLowerCase()}`}
               className="text-[11px] tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors font-light"
               onClick={() => setMenuOpen(false)}
             >
               {link}
             </a>
           ))}
+          <Link
+            href={nav.historyLink.href}
+            className="text-[11px] tracking-widest text-zinc-600 hover:text-zinc-900 transition-colors font-light"
+            onClick={() => setMenuOpen(false)}
+          >
+            {nav.historyLink.label}
+          </Link>
           <a
-            href="#contact"
+            href={`${anchorBase}#contact`}
             className="bg-zinc-900 text-white text-[11px] tracking-widest px-5 py-2.5 hover:bg-zinc-700 transition-colors flex items-center gap-2 font-light w-fit mt-2"
             onClick={() => setMenuOpen(false)}
           >

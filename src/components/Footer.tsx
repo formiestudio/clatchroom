@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteContent } from "@/content/site";
 
 const { nav, footer } = siteContent;
@@ -17,15 +18,26 @@ export default function Footer() {
           </div>
 
           <nav className="flex flex-wrap gap-6">
-            {footer.links.map((link) => (
-              <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
-                className="text-[10px] tracking-widest text-zinc-500 hover:text-white transition-colors font-light"
-              >
-                {link}
-              </a>
-            ))}
+            {footer.links.map((link) => {
+              const isPageLink = link === "HISTORY";
+              return isPageLink ? (
+                <Link
+                  key={link}
+                  href={`/${link.toLowerCase()}`}
+                  className="text-[10px] tracking-widest text-zinc-500 hover:text-white transition-colors font-light"
+                >
+                  {link}
+                </Link>
+              ) : (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="text-[10px] tracking-widest text-zinc-500 hover:text-white transition-colors font-light"
+                >
+                  {link}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-6">
